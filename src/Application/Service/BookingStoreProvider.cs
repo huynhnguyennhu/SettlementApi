@@ -1,11 +1,10 @@
-﻿using Application.Model;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
+using Domain.Model;
 
 namespace Application.Service
 {

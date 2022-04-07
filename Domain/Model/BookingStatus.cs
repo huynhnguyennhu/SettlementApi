@@ -1,4 +1,4 @@
-﻿namespace Application.Model
+﻿namespace Domain.Model
 {
     public enum BookingStatus
     {

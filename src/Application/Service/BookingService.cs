@@ -1,8 +1,8 @@
-﻿using Application.Model;
-using Application.Settlement.Command;
+﻿using Application.Settlement.Command;
 using System;
 using System.Globalization;
 using System.Threading.Tasks;
+using Domain.Model;
 
 namespace Application.Service
 {

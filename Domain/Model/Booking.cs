@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Application.Model
+namespace Domain.Model
 {
     public class Booking: IComparable<Booking>, IEquatable<Booking>
     {

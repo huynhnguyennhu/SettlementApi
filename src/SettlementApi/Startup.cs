@@ -7,10 +7,8 @@ using FluentValidation;
 using System.Reflection;
 using FluentValidation.AspNetCore;
 using SettlementApi.Filters;
-using MediatR;
 using Newtonsoft.Json.Serialization;
 using Application.Settlement.Command;
-using Application.Service;
 
 namespace SettlementApi
 {

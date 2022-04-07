@@ -1,5 +1,5 @@
-﻿using Application.Model;
-using System;
+﻿using System;
+using Domain.Model;
 
 namespace Application.Settlement.Command
 {

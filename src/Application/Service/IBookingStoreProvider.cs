@@ -1,6 +1,6 @@
-﻿using Application.Model;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using Domain.Model;
 
 namespace Application.Service
 {

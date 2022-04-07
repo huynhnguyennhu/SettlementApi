@@ -1,23 +1,19 @@
-﻿using Application.Model;
+﻿using System.Threading.Tasks;
 using Application.Settlement.Command;
+using Domain.Model;
 using FluentAssertions;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
-using SettlementApi;
-using System.Threading.Tasks;
 
-namespace SettlementApi.Tests
+namespace SettlementApi.IntegrationTests
 {
     [TestFixture]
     public class CreateSettlementBookingTests
     {
-        private const string NotEmptyErrorCode = "NotEmptyValidator";
-        private const string CustomErrorCode = "AsyncPredicateValidator";
         private IConfigurationRoot _configuration;
         private IServiceScopeFactory _scopeFactory;
-        private BookSettlementCommandValidator _validator;
         
         [SetUp]
         public void Setup()
@@ -28,46 +24,8 @@ namespace SettlementApi.Tests
             var services = new ServiceCollection();
             startup.ConfigureServices(services);
             _scopeFactory = services.BuildServiceProvider().GetService<IServiceScopeFactory>();
-            _validator = new BookSettlementCommandValidator();            
         }
-
-        [Test]
-        public void WhenRequestDoesNotHaveNameThenRelevantMissingRequiredFieldErrorShouldBeRaised()
-        {
-            var command = new BookSettlementCommand
-            {
-                BookingTime = "11:00"
-            };
-            var validationResult = _validator.Validate(command);
-            validationResult.IsValid.Should().Be(false);
-            validationResult.Errors[0].ErrorCode.Should().Be(NotEmptyErrorCode);
-        }
-
-        [Test]
-        public void WhenRequestDoesNotHaveBookingTimeThenRelevantMissingRequiredFieldErrorShouldBeRaised()
-        {
-            var command = new BookSettlementCommand
-            {
-                Name = "John Smith"
-            };
-            var validationResult = _validator.Validate(command);
-            validationResult.IsValid.Should().Be(false);
-            validationResult.Errors[0].ErrorCode.Should().Be(NotEmptyErrorCode);
-        }
-
-        [Test]
-        public void WhenRequestDoesNotHaveValidBookingTimeThenInvalidDataErrorShouldBeRaised()
-        {
-            var command = new BookSettlementCommand
-            {
-                Name = "John Smith",
-                BookingTime = "16:01"
-            };
-            var validationResult = _validator.Validate(command);
-            validationResult.IsValid.Should().Be(false);
-            validationResult.Errors[0].ErrorCode.Should().Be(CustomErrorCode);
-        }
-
+        
         [Test]
         public async Task WhenRequestContainsMatchingNameAndBookingTimeThenOutcomeMustBeAlreadyReserved()
         {

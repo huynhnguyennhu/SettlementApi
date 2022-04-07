@@ -2,11 +2,11 @@
 This is a sample project to implement a simple booking API using ASP.NET Core, MediatR and FluentValidation.
 
 # Projects
-There are 3 projects in this sample:
+There are 4 projects in this sample:
 1. SettlementApi: ASP.NET Core API project which exposes an endpoint for appointment booking
 2. Application: application layer which handles all application logic and validation rules.
-The Domain entities are also put in here for simplicity. In reality, domain entities will be put in a separate project.
-3. SettlementApi.Tests: unit tests to test the validation rules and business logic of this application.
+3. Domain: contains entities in domain model
+4. SettlementApi.Tests: unit tests to test the validation rules and business logic of this application.
 
 # Technologies
 * ASP.NET Core
@@ -19,7 +19,7 @@ The Domain entities are also put in here for simplicity. In reality, domain enti
 
 # How to test
 1. Run SettlementApi project.
-2. Use Postman to test with payloads in the following format:
+2. Use Swagger to test with payloads in the following format:
 {
     "bookingTime": "15:01",
     "name":"John Smith"
