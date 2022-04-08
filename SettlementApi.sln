@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SettlementApi", "src\Settle
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SettlementApi.IntegrationTests", "tests\SettlementApi.Tests\SettlementApi.IntegrationTests.csproj", "{5A212F6E-11DE-4B82-AA93-82BD6435B608}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{7452B3F2-74D8-41D9-8C52-66CC47BA32C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\Domain\Domain.csproj", "{7452B3F2-74D8-41D9-8C52-66CC47BA32C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Tests", "Application.Tests\Application.Tests.csproj", "{91F1288D-DFA2-4AE9-8708-DDF4CF229DBF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Tests", "tests\Application.Tests\Application.Tests.csproj", "{91F1288D-DFA2-4AE9-8708-DDF4CF229DBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
